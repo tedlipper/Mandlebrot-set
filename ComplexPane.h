@@ -13,7 +13,12 @@ using namespace sf;
 const unsigned int MAX_ITER = 64;
 const float BASE_WIDTH = 4.0;
 const float BASE_HEIGHT = 4.0;
-const float BASE_ZOOM = 0.5;
+const float BASE_ZOOM = 0.5f;
+
+// iteration growth policy per zoom step (linear growth)
+const int ITER_PER_ZOOM = 16;
+const int MAX_ITER_CAP = 2000;
+const int MIN_ITER_CAP = 8;
 
 enum class State {
     CALCULATING,
@@ -45,6 +50,7 @@ private:
     int m_zoomCount;
     float m_aspectRatio;
 
+    int m_maxIter; // dynamic iteration budget that grows/shrinks with zoom
 };
 
 #endif
