@@ -11,7 +11,6 @@
 #include <algorithm>
 #include <thread>
 #include <vector>
-//Partnered with Anna :3 
 using namespace std;
 
 ComplexPlane::ComplexPlane(int pixelWidth, int pixelHeight)
